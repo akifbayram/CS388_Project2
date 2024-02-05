@@ -17,5 +17,9 @@ class ItemFetcher {
         fun getItems(): List<Item> {
             return items
         }
+
+        fun removeItem(position: Int) {
+            items.removeAt(position)
+        }
     }
 }

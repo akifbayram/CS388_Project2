@@ -49,6 +49,13 @@ class MainActivity : AppCompatActivity() {
             itemURLEditText.setText("")
         }
 
+        // Allow user to delete an item by long clicking on it
+        itemsRv.setOnLongClickListener {
+            val position = itemsRv.getChildAdapterPosition(it)
+            ItemFetcher.removeItem(position)
+            adapter.notifyDataSetChanged()
+            true
+        }
 
 
     }
